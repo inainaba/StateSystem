@@ -4,7 +4,7 @@ from django.db import models
 from stateapp.models import Table
 
 
-# ユーザーモデル (AbstractUserをコピペし編集)
+# ユーザーモデル
 class User(AbstractUser, PermissionsMixin):
     """
     追加
