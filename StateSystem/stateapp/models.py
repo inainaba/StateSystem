@@ -31,7 +31,6 @@ class Table(models.Model):
     name - テーブル名
     attendance - 外部キー(Attendance)
     seminar - ゼミ中かどうか(True or False)
-    password - パスワード
     """
     name = models.CharField('テーブル名', max_length=200)
     Attendance = models.ForeignKey(Attendance, on_delete='CASCADE')
