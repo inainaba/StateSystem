@@ -1,5 +1,7 @@
 from django.db import models
 
+from accounts.models import User
+
 
 # 状態モデル
 class State(models.Model):
@@ -18,7 +20,7 @@ class Attendance(models.Model):
     user - 外部キー(User)
     state - 外部キー(State)
     """
-    #user = models.ForeignKey(User, on_delete='CASCADE')
+    user = models.ForeignKey(User, on_delete='CASCADE')
     state = models.ForeignKey(State, on_delete='CASCADE')
 
 

@@ -1,10 +1,14 @@
+from django.contrib.auth.models import AbstractUser, PermissionsMixin
 from django.db import models
+
+from stateapp.models import Table
 
 
 # ユーザーモデル (AbstractUserをコピペし編集)
-class User(AbstractBaseUser, PermissionsMixin):
+class User(AbstractUser, PermissionsMixin):
     """
     追加
     table - 参加しているテーブル
     """
-    pass
+    table = models.ForeignKey(
+        Table, on_delete='CASCADE', null='true', blank='true')
