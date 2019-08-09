@@ -56,7 +56,9 @@ ROOT_URLCONF = 'StateSystem.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,3 +130,8 @@ STATIC_URL = '/static/'
 
 # 認証ユーザー
 AUTH_USER_MODEL = 'accounts.User'
+
+# ログイン処理する場所
+LOGIN_URL = 'accounts:login'
+# ログイン後に跳ぶページ
+LOGIN_REDIRECT_URL = 'index:top'
